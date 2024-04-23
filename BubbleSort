@@ -53,12 +53,11 @@ public class BubbleSort {
 
 
 /*
-* The error in your code lies in how you are printing the sorted 
-* array in the main method. You are directly printing the array returned by the
-* bubbleSorting method using System.out.print(bubbleSorting(arr));.
 
 * However, in Java, if you print an array directly using System.out.print, 
 * it will print its memory address rather than the elements themselves. 
 * To print the sorted elements, you need to iterate over the sorted array and print
 * each element individually.
+
+
  */
