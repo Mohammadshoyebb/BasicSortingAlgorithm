@@ -1,0 +1,64 @@
+public class BubbleSort {
+    public static int[] bubbleSorting(int arr[]) {
+        boolean swapped;
+        for (int turn = 0; turn < arr.length - 1; turn++) {
+            swapped = false;
+            for (int j = 0; j < arr.length - 1 - turn; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+            // If no swaps occurred in this pass, the array is already sorted
+            if (!swapped) {
+                break;
+            }
+        }
+        return arr;
+    }
+    
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 5, 3, 9, 7, 11, 8};
+        int[] sortedArr = bubbleSorting(arr);
+        for (int num : sortedArr) {
+            System.out.print(num + " ");
+        }
+    }
+}
+
+
+// ============================= reverse order ===================================
+
+// public static int[] bubbleSorting(int arr[]) {
+//     boolean swapped;
+//     for (int turn = 0; turn < arr.length - 1; turn++) {
+//         swapped = false;
+//         for (int j = 0; j < arr.length - 1 - turn; j++) {
+//             if (arr[j] < arr[j + 1]) { // Note the change here from > to <
+//                 int temp = arr[j];
+//                 arr[j] = arr[j + 1];
+//                 arr[j + 1] = temp;
+//                 swapped = true;
+//             }
+//         }
+//         // If no swaps occurred in this pass, the array is already in reverse order
+//         if (!swapped) {
+//             break;
+//         }
+//     }
+//     return arr;
+// }
+
+
+/*
+* The error in your code lies in how you are printing the sorted 
+* array in the main method. You are directly printing the array returned by the
+* bubbleSorting method using System.out.print(bubbleSorting(arr));.
+
+* However, in Java, if you print an array directly using System.out.print, 
+* it will print its memory address rather than the elements themselves. 
+* To print the sorted elements, you need to iterate over the sorted array and print
+* each element individually.
+ */
