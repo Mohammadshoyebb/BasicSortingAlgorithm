@@ -1,0 +1,46 @@
+public class InsertionSort {
+    // Method to perform insertion sort on the given array
+    public static int[] insertionSorting(int arr[]) {
+        for(int i = 1; i < arr.length; i++) {
+            int curr = arr[i]; // Current element to be inserted
+            int prev = i - 1; // Index of the previous element
+
+            // Iterate over the sorted part of the array and shift elements to the right
+            // to make space for the current element in its correct position
+            while(prev >= 0 && arr[prev] > curr) {
+                arr[prev + 1] = arr[prev]; // Shift element to the right
+                prev--; // Move to the previous element
+            }
+            arr[prev + 1] = curr; // Insert the current element into its correct position
+        }
+        return arr; // Return the sorted array
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 5, 3, 9, 7, 11, 8};
+        int[] sortedArr = insertionSorting(arr);
+
+        // Print the sorted array
+        for(int num : sortedArr) {
+            System.out.print(num + " ");
+        }
+    }
+}
+
+//=================================Descending Order ====================================
+
+// public static int[] insertionSorting(int arr[]){
+        
+//     for(int i=1; i<arr.length;i++){
+//         int curr = arr[i];
+//         int prev = i-1;
+        
+//         while(prev>=0 && arr[prev]<curr){    // change in comparison
+//             arr[prev+1] = arr[prev];
+//             prev--;
+//         }
+//         arr[prev+1] = curr;
+//     }
+//     return arr;
+// }
+
