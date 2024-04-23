@@ -1,0 +1,68 @@
+//==========================Ascending Order================================================
+
+public class SelectionSort {
+    // Method to perform selection sort on the given array
+    public static int[] selectionSorting(int arr[]) {
+        // Outer loop to iterate over each element of the array
+        for(int i = 0; i < arr.length - 1; i++) {
+            int minPos = i; // Assume the current element is the minimum
+            // Inner loop to find the minimum element from the remaining unsorted elements
+            for(int j = i + 1; j < arr.length; j++) {
+                if(arr[minPos] > arr[j]) { // Compare current minimum with the next element
+                    minPos = j; // Update minPos if a smaller element is found
+                }
+            }
+            // Swap the current element with the minimum element found
+            int temp = arr[minPos];
+            arr[minPos] = arr[i];
+            arr[i] = temp;
+        }
+        return arr; // Return the sorted array
+    }
+
+    public static void main(String[] args) {
+        int arr[] = {1, 2, 5, 8, 4, 3, 2, 5, 6};
+        int sortedArr[] = selectionSorting(arr);
+
+        // Print the sorted array
+        for(int nums : sortedArr) {
+            System.out.print(nums + " ");
+        }
+    }
+}
+
+
+
+
+
+//==========================================descending order=================================================
+public class SelectionSort {
+    // Method to perform selection sort on the given array
+    public static int[] selectionSorting(int arr[]) {
+        // Outer loop to iterate over each element of the array
+        for(int i = 0; i < arr.length - 1; i++) {
+            int minPos = i; // Assume the current element is the minimum
+            // Inner loop to find the minimum element from the remaining unsorted elements
+            for(int j = i + 1; j < arr.length; j++) {
+                if(arr[minPos] > arr[j]) { // Compare current minimum with the next element
+                    minPos = j; // Update minPos if a smaller element is found
+                }
+            }
+            // Swap the current element with the minimum element found
+            int temp = arr[minPos];
+            arr[minPos] = arr[i];
+            arr[i] = temp;
+        }
+        return arr; // Return the sorted array
+    }
+
+    public static void main(String[] args) {
+        int arr[] = {1, 2, 5, 8, 4, 3, 2, 5, 6};
+        int sortedArr[] = selectionSorting(arr);
+
+        // Reverse the sorted array to print in descending order
+        for (int i = sortedArr.length - 1; i >= 0; i--) {
+            System.out.print(sortedArr[i] + " ");
+        }
+    }
+}
